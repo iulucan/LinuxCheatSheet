@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linux Command Cheat Sheet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #ecf0f1;
+      text-shadow: 2px 2px 4px #000;
+      margin-bottom: 40px;
+      animation: slideDown 1s ease-out;
+    }
+
+    .section {
+      background: #ffffff10;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 8px solid;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+      background: #ffffff20;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      color: #f39c12;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .section:nth-child(odd) {
+      border-color: #1abc9c;
+    }
+
+    .section:nth-child(even) {
+      border-color: #9b59b6;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+
+    code {
+      background-color: #2d3436;
+      color: #00cec9;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Linux Command Cheat Sheet</h1>
+
+  <div class="section">
+    <h2>File Operations</h2>
+    <p><code>ls</code> – List directory contents</p>
+    <p><code>cd [dir]</code> – Change directory</p>
+    <p><code>pwd</code> – Show current directory</p>
+    <p><code>cp [src] [dst]</code> – Copy file or directory</p>
+    <p><code>mv [src] [dst]</code> – Move/rename file or directory</p>
+    <p><code>rm [file]</code> – Delete file</p>
+    <p><code>rm -r [dir]</code> – Delete directory recursively</p>
+    <p><code>touch [file]</code> – Create empty file</p>
+    <p><code>mkdir [dir]</code> – Create directory</p>
+  </div>
+
+  <div class="section">
+    <h2>File Viewing</h2>
+    <p><code>cat [file]</code> – View file contents</p>
+    <p><code>less [file]</code> – View file with paging</p>
+    <p><code>head [file]</code> – Show first lines</p>
+    <p><code>tail [file]</code> – Show last lines</p>
+    <p><code>tail -f [file]</code> – Live monitor file</p>
+  </div>
+
+  <div class="section">
+    <h2>Permissions</h2>
+    <p><code>chmod [mode] [file]</code> – Change file permissions</p>
+    <p><code>chown [user]:[group] [file]</code> – Change owner</p>
+    <p><code>ls -l</code> – Show permissions</p>
+  </div>
+
+  <div class="section">
+    <h2>Searching</h2>
+    <p><code>find [dir] -name "[pattern]"</code> – Search for files</p>
+    <p><code>grep "[text]" [file]</code> – Search text in file</p>
+    <p><code>grep -r "[text]" [dir]</code> – Recursive grep</p>
+  </div>
+
+  <div class="section">
+    <h2>System Info</h2>
+    <p><code>uname -a</code> – System info</p>
+    <p><code>top</code> – Running processes</p>
+    <p><code>htop</code> – Interactive process viewer</p>
+    <p><code>df -h</code> – Disk usage</p>
+    <p><code>free -h</code> – Memory usage</p>
+    <p><code>uptime</code> – System uptime</p>
+  </div>
+
+  <div class="section">
+    <h2>Networking</h2>
+    <p><code>ip a</code> – Show IP addresses</p>
+    <p><code>ping [host]</code> – Ping host</p>
+    <p><code>netstat -tuln</code> – Show ports</p>
+    <p><code>curl [url]</code> – Make web request</p>
+    <p><code>wget [url]</code> – Download file</p>
+  </div>
+
+  <div class="section">
+    <h2>Package Management (Debian/Ubuntu)</h2>
+    <p><code>sudo apt update</code> – Refresh package list</p>
+    <p><code>sudo apt install [pkg]</code> – Install package</p>
+    <p><code>sudo apt remove [pkg]</code> – Remove package</p>
+  </div>
+
+  <div class="section">
+    <h2>Package Management (RedHat/CentOS)</h2>
+    <p><code>sudo yum install [pkg]</code> – Install package</p>
+    <p><code>sudo yum remove [pkg]</code> – Remove package</p>
+  </div>
+
+  <div class="section">
+    <h2>Others</h2>
+    <p><code>man [cmd]</code> – Manual for command</p>
+    <p><code>history</code> – Show command history</p>
+    <p><code>alias ll='ls -la'</code> – Create shortcut</p>
+    <p><code>sudo [cmd]</code> – Run as superuser</p>
+  </div>
+
+</body>
+</html>
